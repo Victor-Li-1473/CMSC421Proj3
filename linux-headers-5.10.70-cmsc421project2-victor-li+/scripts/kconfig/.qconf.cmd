@@ -1,0 +1,1 @@
+cmd_scripts/kconfig/qconf := g++   -o scripts/kconfig/qconf  scripts/kconfig/images.o scripts/kconfig/confdata.o scripts/kconfig/expr.o scripts/kconfig/lexer.lex.o scripts/kconfig/parser.tab.o scripts/kconfig/preprocess.o scripts/kconfig/symbol.o scripts/kconfig/util.o  scripts/kconfig/qconf.o scripts/kconfig/qconf-moc.o   -lQt5Widgets -lQt5Gui -lQt5Core
