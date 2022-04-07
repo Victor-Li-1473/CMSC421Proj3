@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
 {	
 	// Test the buffer is initalized properly
 	init_buffer_421();
+	
 	print_buffer_421();
 	
 	// Test whether the buffer inserts 20 values properly
@@ -16,6 +17,8 @@ int main(int argc, char *argv[])
 	for (int i = 1; i <= 20; i++){
 		insert_buffer_421(i);
 	}
+	print_buffer_421();
+	delete_buffer_421();
 	print_buffer_421();
 	return 0;
 }
