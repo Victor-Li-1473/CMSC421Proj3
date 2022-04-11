@@ -9,7 +9,6 @@
 struct ring_buffer_421* new_ring;
 
 long init_buffer_421(void){
-	
 	new_ring = malloc(sizeof(struct ring_buffer_421));
 	new_ring->length = 0;
 	new_ring->read = malloc(sizeof(struct node_421));

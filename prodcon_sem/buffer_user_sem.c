@@ -9,6 +9,25 @@ static sem_t empty_count;
 
 long init_buffer_421(void) {
 	// Write your code to initialize buffer
+	buffer = malloc(sizeof(struct ring_buffer_421));
+	buffer->length = 0;
+	buffer->read = malloc(sizeof(struct node_421));
+	buffer->read->data = 0;
+	buffer->read->next = NULL;
+	buffer->write = NULL;
+	
+	struct node_421 *temp = buffer->read;
+	for (int i = 0; i < 20; i++){
+		struct node_421 *newNode_421 = malloc(sizeof(struct node_421));
+		newNode_421->data = 0;
+		newNode_421->next = NULL;
+		
+		temp->next = newNode_421;
+		temp = temp->next;
+	}	
+	temp->next = buffer->read;
+	buffer->write = buffer->read;
+	return 0;
 
 	// Initialize your semaphores here.
 	
