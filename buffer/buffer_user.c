@@ -37,6 +37,7 @@ long insert_buffer_421(int i){
 	}
 	
 	if (new_ring->length >= 20){
+		printf("failed to insert");
 		return -1;
 	}
 	new_ring->write->data = i;
