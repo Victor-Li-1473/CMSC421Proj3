@@ -11,11 +11,11 @@ clean:
 	
 	
 BFU: test_user_sem.o buffer_user_sem.o
-	$(CC) $(CFLAGS) -o BFU test_user_sem.o buffer_user_sem.o
+	$(CC) $(CFLAGS) -pthread -o BFU test_user_sem.o buffer_user_sem.o
 	
 buffer_user_sem.o: buffer_user_sem.c buffer_sem.h
-	$(CC) $(CFLAGS) -c buffer_user_sem.c
+	$(CC) $(CFLAGS) -pthread -c buffer_user_sem.c
 
 test_user_sem.o: test_user_sem.c
-	$(CC) $(CFLAGS) -c test_user_sem.c
+	$(CC) $(CFLAGS) -pthread -c test_user_sem.c
 	
