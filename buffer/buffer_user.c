@@ -76,7 +76,6 @@ long delete_buffer_421(void){
 		new_ring->read = new_ring->write;
 		printf("Node %d deleted\n", i);
 	}	
-	//free(new_ring->write);
 	free(new_ring->read);
 	new_ring->read = NULL;
 	new_ring->write = NULL;

@@ -30,6 +30,9 @@ long init_buffer_421(void) {
 	return 0;
 
 	// Initialize your semaphores here.
+	sem_init(&fill_count, 0, SIZE_OF_BUFFER);
+	sem_init(&empty_count, 0, 0);
+	sem_init(&mutex, 0, 0);
 	
 	return 0;
 }
@@ -37,11 +40,24 @@ long init_buffer_421(void) {
 
 long enqueue_buffer_421(char * data) {
 	// Write your code to enqueue data into the buffer
+	if (buffer == NULL){
+		return -1;
+	}
+	
+	if (buffer->length >= 20){
+		printf("failed to insert");
+		return -1;
+	}
+	buffer->write->data = i;
+	buffer->length += 1;
+	buffer->write = buffer->write->next;
+	return 0;
 }
 
 long dequeue_buffer_421(char * data) {
 
 	// Write your code to dequeue data from the buffer
+	
 
 	return 0;
 }
@@ -50,6 +66,24 @@ long dequeue_buffer_421(char * data) {
 long delete_buffer_421(void) {
 	// Tip: Don't call this while any process is waiting to enqueue or dequeue.
 	// write your code to delete buffer and other unwanted components
+	if (buffer == NULL){
+		return -1;
+	}
+	
+	buffer->write = buffer->read;
+	for (int i = 0; i < 20; i++){
+		buffer->write = buffer->write->next;
+		free(buffer->read);
+		buffer->read = buffer->write;
+		printf("Node %d deleted\n", i);
+	}	
+	free(buffer->read);
+	buffer->read = NULL;
+	buffer->write = NULL;
+
+	buffer->length = 0;
+	free(buffer);
+
 	return 0;
 }
 
@@ -65,5 +99,24 @@ void print_semaphores(void) {
 	sem_getvalue(&empty_count, &value);
 	printf("sem_t empty_count = %d\n", value);
 	return;
+}
+
+long print_buffer_421(void){
+	if (buffer == NULL){
+		return -1;
+	}
+	
+	int i = 1;
+	struct bb_node_421 *temp = buffer->read;
+		
+	while (i <= 20){
+		printf("Node %d: %s\n", i, temp->data);
+		temp = temp->next;
+		i++;
+	}
+	
+	printf("\n");
+	
+	return 0;
 }
 

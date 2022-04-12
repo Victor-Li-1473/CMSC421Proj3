@@ -1,8 +1,3 @@
-# makefile for scheduling program
-#
-# make buffer - for the buffer folder
-
-
 CC=gcc
 CFLAGS=-Wall
 
