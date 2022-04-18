@@ -19,3 +19,13 @@ buffer_user_sem.o: buffer_user_sem.c buffer_sem.h
 test_user_sem.o: test_user_sem.c
 	$(CC) $(CFLAGS) -pthread -c test_user_sem.c
 	
+	
+BFK: test_sem.o buffer_sem.o
+	$(CC) $(CFLAGS) -pthread -o BFU test_sem.o buffer_sem.o
+	
+buffer_sem.o: buffer_sem.c buffer_sem.h
+	$(CC) $(CFLAGS) -pthread -c buffer_sem.c
+
+test_sem.o: test_sem.c
+	$(CC) $(CFLAGS) -pthread -c test_sem.c
+	
