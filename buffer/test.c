@@ -1,3 +1,5 @@
+/*
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -30,10 +32,11 @@ long print_buffer_421(void){
 long delete_buffer_421(void){
 	return syscall(__NR_delete_buffer_421);
 }
-
+*/
 
 int main(int argc, char *argv[])
-{	
+{
+	/*	
 	// Test the buffer is initalized properly
 	init_buffer_421();
 	
@@ -47,5 +50,6 @@ int main(int argc, char *argv[])
 	print_buffer_421();
 	delete_buffer_421();
 	print_buffer_421();
+	*/
 	return 0;
 }

@@ -37,9 +37,6 @@ void print_semaphores(void);
 void *producer(void *param);
 void *consumer(void *param);
 
-// temp
-long print_buffer(void);
-
 #endif
 
 #ifdef __cplusplus

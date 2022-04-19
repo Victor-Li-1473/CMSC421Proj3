@@ -11,7 +11,7 @@ clean:
 	
 	
 BF: test_mon.o buffer_mon.o
-	$(CC) $(CFLAGS) -o buffer_mon test_mon.o buffer_mon.o
+	$(CC) $(CFLAGS) -o BF test_mon.o buffer_mon.o
 	
 BF.o: buffer_mon.c buffer_mon.h
 	$(CC) $(CFLAGS) -c buffer_mon.c

@@ -26,14 +26,5 @@ buffer_user.o: buffer_user.c buffer.h
 test_user.o: test_user.c
 	$(CC) $(CFLAGS) -c test_user.c
 
-	
-buffer: test.o buffer.o
-	$(CC) $(CFLAGS) -o buffer test.o buffer.o
-	
-buffer_user.o: buffer.c buffer.h
-	$(CC) $(CFLAGS) -c buffer.c
-
-test_user.o: test.c
-	$(CC) $(CFLAGS) -c test.c
 
 

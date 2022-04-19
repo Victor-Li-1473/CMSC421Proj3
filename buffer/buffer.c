@@ -1,3 +1,4 @@
+/*
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -90,5 +91,5 @@ SYSCALL_DEFINE0(delete){
 
 	return 0;
 }
-
+*/
 

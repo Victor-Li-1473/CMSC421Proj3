@@ -1372,9 +1372,15 @@ int __sys_getsockopt(int fd, int level, int optname, char __user *optval,
 int __sys_setsockopt(int fd, int level, int optname, char __user *optval,
 		int optlen);
 
-long init_buffer_421(void);
-long insert_buffer_421(int i);
-long print_buffer_421(void);
-long delete_buffer_421(void);
+asmlinkage long init_buffer_421(void);
+asmlinkage long insert_buffer_421(int i);
+asmlinkage long print_buffer_421(void);
+asmlinkage long delete_buffer_421(void);
+
+asmlinkage long init_buffer_sem_421(void);
+asmlinkage long insert_buffer_sem_421(int i);
+asmlinkage long dequeue_buffer_sem_421(int i);
+asmlinkage long delete_buffer_sem_421(void);
+
 
 #endif
